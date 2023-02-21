@@ -8,7 +8,7 @@
 Expected:
 If you call `Math.sqrt` in the browser, you are expected to see the `uprobe` program's handler `handle_event` got fired 
 
-If you see a V8 fatal error, it's probably a debug-only check and you can disable it by comment out the corresponding `#ifdef DEBUG` block in `v8/src/execution/isolate.cc` and recompile chrome. It shouldn't take a long time.  
+If you see a V8 fatal error, it's probably a debug-only check in V8 and you can safely disable it by comment out the corresponding `#ifdef DEBUG` block in `v8/src/execution/isolate.cc` and recompile chrome. It shouldn't take a long time.  
 
 If you want to change the attached code point, change `SEC("uprobe//home/utsec/chromium/src/out/Debug/libv8.so:Builtins_MathSqrt")` in the BPF program.
 
